@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,13 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onNextClick(View source) {
         Log.i(tag, "Launching Color Activity");
-        Intent colorActivityIntent = new Intent(this, ColorActivity.class);
-
-        sendBundle.putString("name", "Tom");
-
-        colorActivityIntent.putExtra("groceries", sendBundle);
-
-        startActivity(colorActivityIntent);
+        Intent colorActivityIntent = new Intent(this, ColorActivity.class); // #1a
+      //  EditText e = (EditText)findViewById(R.id.editText_Name); // #3
+      //  sendBundle.putString("name", e.getText().toString()); // #2b
+      //  colorActivityIntent.putExtra("groceries", sendBundle);// #2a
+        startActivity(colorActivityIntent); //#1b
     }
 
     @Override

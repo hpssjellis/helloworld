@@ -7,12 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class ColorActivity extends AppCompatActivity {
+    Bundle groceries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color);
-        Bundle groceries = getIntent().getBundleExtra("groceries");
+        groceries = getIntent().getBundleExtra("groceries");
         Log.i("GROCERIES!", groceries.getString("name"));
     }
 
