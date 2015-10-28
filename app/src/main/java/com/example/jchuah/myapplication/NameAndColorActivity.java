@@ -2,30 +2,21 @@ package com.example.jchuah.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-public class ColorActivity extends AppCompatActivity {
-    Bundle groceries;
-
-    public void onColorClick(View button) {
-
-    }
+public class NameAndColorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_color);
-        groceries = getIntent().getBundleExtra("groceries");
-        Log.i("GROCERIES!", groceries.getString("name"));
+        setContentView(R.layout.activity_name_and_color);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_color, menu);
+        getMenuInflater().inflate(R.menu.menu_name_and_color, menu);
         return true;
     }
 
