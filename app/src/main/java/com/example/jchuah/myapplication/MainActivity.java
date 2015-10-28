@@ -1,7 +1,6 @@
 package com.example.jchuah.myapplication;
 
 import android.content.Intent;
-import android.os.Debug;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,14 +8,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     static String tag = "com.example.jchuah.myapplication.MainActivity";
 
 
-    Bundle sendBundle = new Bundle();
+    Bundle groceryBundle = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     public void onNextClick(View source) {
         Log.i(tag, "Launching Color Activity");
         Intent colorActivityIntent = new Intent(this, ColorActivity.class); // #1a
-      //  EditText e = (EditText)findViewById(R.id.editText_Name); // #3
-      //  sendBundle.putString("name", e.getText().toString()); // #2b
-      //  colorActivityIntent.putExtra("groceries", sendBundle);// #2a
+        EditText e = (EditText)findViewById(R.id.username); // #3
+        groceryBundle.putString("name", e.getText().toString()); // #2b
+        colorActivityIntent.putExtra("groceries", groceryBundle);// #2a
         startActivity(colorActivityIntent); //#1b
     }
 

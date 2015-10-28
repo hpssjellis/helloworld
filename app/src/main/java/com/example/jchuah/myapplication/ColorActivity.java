@@ -1,17 +1,26 @@
 package com.example.jchuah.myapplication;
 
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 public class ColorActivity extends AppCompatActivity {
     Bundle groceries;
 
-    public void onColorClick(View button) {
+    public void onColorClick(View source) {
+        Intent nameAndColorIntent = new Intent(this, NameAndColorActivity.class);
+        nameAndColorIntent.putExtra("groceries", groceries);
 
+        Button colorButton = (Button)source;
+        Drawable bgColor = source.getBackground();
+
+        startActivity(nameAndColorIntent);
     }
 
     @Override
