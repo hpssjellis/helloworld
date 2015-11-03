@@ -1,6 +1,7 @@
 package com.example.jchuah.myapplication;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,7 +19,9 @@ public class ColorActivity extends AppCompatActivity {
         nameAndColorIntent.putExtra("groceries", groceries);
 
         Button colorButton = (Button)source;
-        Drawable bgColor = source.getBackground();
+        ColorDrawable bgColor = (ColorDrawable)source.getBackground();
+
+        groceries.putInt("colorclick", bgColor.getColor());
 
         startActivity(nameAndColorIntent);
     }
