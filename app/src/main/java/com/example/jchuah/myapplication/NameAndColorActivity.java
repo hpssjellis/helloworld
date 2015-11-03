@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class NameAndColorActivity extends AppCompatActivity {
     Bundle groceries;
@@ -15,6 +17,10 @@ public class NameAndColorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_name_and_color);
         groceries = getIntent().getBundleExtra("groceries");
         Log.i("GROCERIES!", groceries.getString("name"));
+        String name = groceries.getString("name");
+        TextView colorful_name_textview = (TextView)findViewById(R.id.colorful_name);
+        colorful_name_textview.setText(name);
+        colorful_name_textview.setTextColor(groceries.getInt("colorClick"));
     }
 
     @Override
